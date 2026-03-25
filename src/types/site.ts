@@ -42,7 +42,7 @@ export interface SiteConfig {
     year: number;
   };
   /**
-   * Substrings to highlight in publication titles and meta lines (longest match wins per occurrence).
+   * Substrings to highlight in publication title, venue line, and author line (longest match wins per occurrence).
    */
   publication_highlight_names?: string[];
   social: {
@@ -66,7 +66,10 @@ export interface PublicationEntry {
   key: string;
   num: string;
   title: string;
-  meta: string;
+  /** Conference / journal / publisher — first line under the title. */
+  venueLine: string;
+  /** Full author list with year — second line. */
+  authorsLine: string;
   url: string | null;
   bibtex: string;
 }
@@ -91,6 +94,11 @@ export interface SiteData {
   };
   /** Same shape as `education` — e.g. lab / research experience. */
   experiment: {
+    section_title: string;
+    items: {date: string; title: string; org: string; url?: string}[];
+  };
+  /** Same layout as `education` — honors, funding, etc. */
+  award: {
     section_title: string;
     items: {date: string; title: string; org: string}[];
   };

@@ -167,6 +167,22 @@ export default function App() {
                 ))}
               </div>
             </div>
+
+            <div className="pixel-border bg-surface-container-low p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="w-3 h-3 bg-tertiary"></span>
+                <h2 className="font-headline font-bold text-lg uppercase tracking-widest">
+                  {data.award.section_title}
+                </h2>
+              </div>
+              <div className="space-y-4">
+                {data.award.items.map((item) => (
+                  <React.Fragment key={`${item.date}-${item.title}`}>
+                    <AwardItem date={item.date} title={item.title} org={item.org} />
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
           </section>
 
           <section className="md:col-span-8 flex flex-col gap-6">
@@ -301,7 +317,8 @@ export default function App() {
                       <PublicationRow
                         num={pub.num}
                         title={pub.title}
-                        meta={pub.meta}
+                        venueLine={pub.venueLine}
+                        authorsLine={pub.authorsLine}
                         url={pub.url}
                         bibtex={pub.bibtex}
                         highlightNames={publicationHighlights}
@@ -459,14 +476,16 @@ function BlogArticle({
 function PublicationRow({
   num,
   title,
-  meta,
+  venueLine,
+  authorsLine,
   url,
   bibtex,
   highlightNames,
 }: {
   num: string;
   title: string;
-  meta: string;
+  venueLine: string;
+  authorsLine: string;
   url: string | null;
   bibtex: string;
   highlightNames: string[];
@@ -491,8 +510,13 @@ function PublicationRow({
           <h3 className="font-headline font-bold text-sm uppercase leading-snug">
             {highlightSubstrings(title, highlightNames)}
           </h3>
+          {venueLine.trim() ? (
+            <p className="text-[10px] font-label font-bold text-secondary uppercase tracking-wide leading-snug">
+              {highlightSubstrings(venueLine.trim(), highlightNames)}
+            </p>
+          ) : null}
           <p className="text-[11px] text-on-surface-variant leading-snug">
-            {highlightSubstrings(meta, highlightNames)}
+            {highlightSubstrings(authorsLine, highlightNames)}
           </p>
         </div>
       </div>

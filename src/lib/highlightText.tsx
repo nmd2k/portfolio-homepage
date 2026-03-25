@@ -5,7 +5,7 @@ function escapeRegExp(s: string): string {
 }
 
 /**
- * Wraps configured substrings in a boxy <mark> (longest matches first in the regex).
+ * Wraps configured substrings in bold + underline (longest matches first in the regex).
  */
 export function highlightSubstrings(text: string, rawNames: string[]): React.ReactNode {
   const names = [...rawNames].map((n) => n.trim()).filter((n) => n.length > 0);
@@ -18,12 +18,12 @@ export function highlightSubstrings(text: string, rawNames: string[]): React.Rea
 
   return parts.map((part, i) =>
     nameSet.has(part) ? (
-      <mark
+      <span
         key={`h-${i}-${part}`}
-        className="bg-surface-container-highest text-primary font-semibold px-0.5 border border-outline rounded-none"
+        className="font-bold underline decoration-outline underline-offset-2"
       >
         {part}
-      </mark>
+      </span>
     ) : (
       <React.Fragment key={`t-${i}`}>{part}</React.Fragment>
     ),

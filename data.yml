@@ -8,12 +8,12 @@ bio:
   # - [link text](https://example.com)
   # - plain line breaks
   markdown:
-    - "I am currently pursuing my PhD at the University of Melbourne (ranked 19* worldwide), under the supervision of [Dr. Bach Le Dinh Xuan](https://xuanbachle.github.io/) and [Dr. Van-Thuan Pham](https://thuanpv.github.io/). Previously, I graduated with a Bachelor's degree in Computer Science from Vietnam National University in 2022, where I was supervised by [Dr. Tran Quoc Long](https://scholar.google.com/citations?user=tnDavuYAAAAJ&hl=en), Director of the Institute for Artificial Intelligence."
-    - "From 2022 to 2025, I joined the **AI Residency Program** at the FPT AI Center, working alongside outstanding young researchers across Vietnam. With invaluable mentorship from [Dr. Nghi Bui](https://bdqnghi.github.io/) (Salesforce Senior Scientist; Product Owner & Lab Manager at FPT Software) and [Dr. Quang Pham](https://sites.google.com/view/quangpham93) (Research Scientist at A*STAR), I published research papers at leading international conferences, including ICLR, EMNLP, and NAACL."
+    - "I am currently pursuing my **PhD** at the **University of Melbourne** (ranked 19 worldwide), under the supervision of [Dr. Bach Le Dinh Xuan](https://xuanbachle.github.io/) and [Dr. Van-Thuan Pham](https://thuanpv.github.io/). Previously, I graduated with a Bachelor's degree in Computer Science from Vietnam National University in 2022, where I was supervised by [Dr. Tran Quoc Long](https://scholar.google.com/citations?user=tnDavuYAAAAJ&hl=en), Director of the Institute for Artificial Intelligence."
+    - "Before 2025, I joined the **AI Residency Program** at the FPT AI Center, working alongside outstanding young researchers across Vietnam. With invaluable mentorship from [Dr. Nghi Bui](https://bdqnghi.github.io/) (Salesforce Senior Scientist; Product Owner & Lab Manager at FPT Software) and [Dr. Quang Pham](https://sites.google.com/view/quangpham93) (Research Scientist at A*STAR), I published research papers at leading international conferences, including ICLR, EMNLP, and NAACL."
     # - "Beyond academia, I am an active contributor to open-source projects and always welcome opportunities for collaboration. The best way to reach me is via email."
 
 education:
-  section_title: "EDUCATION & AWARDS"
+  section_title: "EDUCATION"
   items:
     - date: "2025 — Present"
       title: "PhD in Engineering and Information Technology"
@@ -21,7 +21,7 @@ education:
     - date: "2018 - 2022"
       title: "Honours BSc in Computer Science"
       org: "University of Engineering and Technology (UET), Vietnam National University"
-
+    
 experiment:
   section_title: "EXPERIMENTS // LABs"
   items:
@@ -37,7 +37,16 @@ experiment:
       title: "Student Researcher"
       org: "AI Labs, UET"
       url: "#"
-    
+  
+award:
+  section_title: "AWARDS"
+  items:
+    - date: "2025"
+      title: "Melbourne Research Scholarship"
+      org: "The University of Melbourne"
+    - date: "2021"
+      title: "Panasonic Asia Scholarship"
+      org: "Panasonic Vietnam"
 
 news:
   section_title: "NEWS"
@@ -67,7 +76,7 @@ blog:
     #   href: "#"
 
 publications:
-  section_title: "CORE_PUBLICATIONS"
+  section_title: "PUBLICATIONS"
 
 projects:
   section_title: "ACTIVE_PROJECTS"
@@ -87,14 +96,3 @@ projects:
       status: "DEACTIVE"
       experimental: false
       url: "https://github.com/FSoft-AI4Code/CodeText-parser"
-    - title: "CodeText Parser"
-      desc: "Code-Text parser is a custom tree-sitter's grammar parser for extract raw source code into class and function level."
-      status: "DEACTIVE"
-      experimental: false
-      url: "https://github.com/FSoft-AI4Code/CodeText-parser"
-    - title: "CodeText Parser"
-      desc: "Code-Text parser is a custom tree-sitter's grammar parser for extract raw source code into class and function level."
-      status: "DEACTIVE"
-      experimental: false
-      url: "https://github.com/FSoft-AI4Code/CodeText-parser"
-

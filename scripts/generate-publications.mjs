@@ -18,28 +18,22 @@ function field(entry, name) {
   return v.replace(/\s+/g, ' ').trim();
 }
 
-function firstAuthorSurname(authorStr) {
-  if (!authorStr) return '';
-  const first = authorStr.split(/\s+and\s+/i)[0].replace(/\n/g, ' ').trim();
-  const comma = first.indexOf(',');
-  if (comma !== -1) return first.slice(0, comma).trim();
-  const parts = first.split(/\s+/);
-  return parts[parts.length - 1] || first;
-}
-
-function buildMeta(entry) {
-  const author = field(entry, 'author');
-  const year = field(entry, 'year');
+/** Conference / journal / publisher — shown on its own line above authors. */
+function buildVenueLine(entry) {
   const venue =
     field(entry, 'booktitle') ||
     field(entry, 'journal') ||
     field(entry, 'publisher') ||
     '';
-  const surname = firstAuthorSurname(author);
-  const authorShort = surname ? `${surname} et al.` : '';
-  const y = year || 'n.d.';
-  const ven = venue ? ` ${venue}.` : '';
-  return authorShort ? `${authorShort} (${y}).${ven}` : `(${y}).${ven}`;
+  return venue ? `${venue}.` : '';
+}
+
+/** Full author list + year — line below venue (highlights match names here). */
+function buildAuthorsLine(entry) {
+  const author = field(entry, 'author');
+  const year = field(entry, 'year') || 'n.d.';
+  if (author) return `${author} (${year}).`;
+  return `(${year}).`;
 }
 
 function buildUrl(entry) {
@@ -75,7 +69,8 @@ function main() {
     return {
       key: entry.key,
       title: field(entry, 'title') || entry.key,
-      meta: buildMeta(entry),
+      venueLine: buildVenueLine(entry),
+      authorsLine: buildAuthorsLine(entry),
       url: buildUrl(entry),
       bibtex,
       year,

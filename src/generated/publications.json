@@ -2,15 +2,17 @@
   {
     "key": "manh2025codemmlumultitaskbenchmarkassessing",
     "title": "CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs",
-    "meta": "Manh et al. (2025).",
+    "venueLine": "International Conference on Learning Representations: ICLR 2025.",
+    "authorsLine": "Dung Nguyen Manh and Thang Phan Chau and Nam Le Hai and Thong T. Doan and Nam V. Nguyen and Quang Pham and Nghi D. Q. Bui (2025).",
     "url": "https://arxiv.org/abs/2410.01999",
-    "bibtex": "@misc{manh2025codemmlumultitaskbenchmarkassessing,\n      title={CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs}, \n      author={Dung Nguyen Manh and Thang Phan Chau and Nam Le Hai and Thong T. Doan and Nam V. Nguyen and Quang Pham and Nghi D. Q. Bui},\n      year={2025},\n      eprint={2410.01999},\n      archivePrefix={arXiv},\n      primaryClass={cs.SE},\n      url={https://arxiv.org/abs/2410.01999}, \n}\n",
+    "bibtex": "@misc{manh2025codemmlumultitaskbenchmarkassessing,\n    title={CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs}, \n    author={Dung Nguyen Manh and Thang Phan Chau and Nam Le Hai and Thong T. Doan and Nam V. Nguyen and Quang Pham and Nghi D. Q. Bui},\n    year={2025},\n    eprint={2410.01999},\n    booktitle = \"International Conference on Learning Representations: ICLR 2025\",\n    archivePrefix={arXiv},\n    primaryClass={cs.SE},\n    url={https://arxiv.org/abs/2410.01999}, \n}\n",
     "num": "01"
   },
   {
     "key": "hai-etal-2025-impacts",
     "title": "On the Impacts of Contexts on Repository-Level Code Generation",
-    "meta": "Hai et al. (2025). Findings of the Association for Computational Linguistics: NAACL 2025.",
+    "venueLine": "Findings of the Association for Computational Linguistics: NAACL 2025.",
+    "authorsLine": "Hai, Nam Le and Nguyen, Dung Manh and Bui, Nghi D. Q. (2025).",
     "url": "https://aclanthology.org/2025.findings-naacl.82/",
     "bibtex": "@inproceedings{hai-etal-2025-impacts,\n    title = \"On the Impacts of Contexts on Repository-Level Code Generation\",\n    author = \"Hai, Nam Le  and\n      Nguyen, Dung Manh  and\n      Bui, Nghi D. Q.\",\n    editor = \"Chiruzzo, Luis  and\n      Ritter, Alan  and\n      Wang, Lu\",\n    booktitle = \"Findings of the Association for Computational Linguistics: NAACL 2025\",\n    month = apr,\n    year = \"2025\",\n    address = \"Albuquerque, New Mexico\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2025.findings-naacl.82/\",\n    doi = \"10.18653/v1/2025.findings-naacl.82\",\n    pages = \"1496--1524\",\n    ISBN = \"979-8-89176-195-7\",\n    abstract = \"CodeLLMs are widely used for code generation, yet their ability to handle repository-level dependencies remains underexplored. We introduce RepoExec, a benchmark for evaluating repository-level code generation, focusing on executability, functional correctness, and dependency utilization. Our study evaluates 18 models, revealing that retaining full dependency context yields the best performance, while smaller context sizes can be misleading. Pretrained LLMs excel in correctness but often reimplement dependencies, while instruction-tuned models better utilize dependencies but sometimes introduce unnecessary complexity. We propose an instruction-tuning dataset that improves dependency handling and introduce a new metric, Dependency Invocation Rate (DIR), to measure context utilization. Experiments show that instruction-tuned models improve DIR by over 10{\\%}, and multi-round debugging further enhances both correctness and dependency use. RepoExec provides a comprehensive framework to advance CodeLLMs for real-world applications. The dataset and source code are available at \\url{https://github.com/FSoft-AI4Code/RepoExec}.\"\n}\n",
     "num": "02"
@@ -18,7 +20,8 @@
   {
     "key": "https://doi.org/10.48550/arxiv.2512.18470",
     "title": "SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios",
-    "meta": "Thai et al. (2025). arXiv.",
+    "venueLine": "arXiv.",
+    "authorsLine": "Thai, Minh V. T. and Le, Tue and Manh, Dung Nguyen and Nhat, Huy Phan and Bui, Nghi D. Q. (2025).",
     "url": "https://arxiv.org/abs/2512.18470",
     "bibtex": "@misc{https://doi.org/10.48550/arxiv.2512.18470,\n    doi = {10.48550/ARXIV.2512.18470},\n    url = {https://arxiv.org/abs/2512.18470},\n    author = {Thai, Minh V. T. and Le, Tue and Manh, Dung Nguyen and Nhat, Huy Phan and Bui, Nghi D. Q.},\n    keywords = {Software Engineering (cs.SE), Artificial Intelligence (cs.AI), Multiagent Systems (cs.MA), FOS: Computer and information sciences, FOS: Computer and information sciences},\n    title = {SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios},\n    publisher = {arXiv},\n    year = {2025},\n    copyright = {arXiv.org perpetual, non-exclusive license}\n}\n",
     "num": "03"
@@ -26,7 +29,8 @@
   {
     "key": "nguyen-etal-2023-vault",
     "title": "The Vault: A Comprehensive Multilingual Dataset for Advancing Code Understanding and Generation",
-    "meta": "Nguyen et al. (2023). Findings of the Association for Computational Linguistics: EMNLP 2023.",
+    "venueLine": "Findings of the Association for Computational Linguistics: EMNLP 2023.",
+    "authorsLine": "Nguyen, Dung and Nam, Le and Dau, Anh and Nguyen, Anh and Nghiem, Khanh and Guo, Jin and Bui, Nghi (2023).",
     "url": "https://aclanthology.org/2023.findings-emnlp.316/",
     "bibtex": "@inproceedings{nguyen-etal-2023-vault,\n    title = \"The Vault: A Comprehensive Multilingual Dataset for Advancing Code Understanding and Generation\",\n    author = \"Nguyen, Dung  and\n      Nam, Le  and\n      Dau, Anh  and\n      Nguyen, Anh  and\n      Nghiem, Khanh  and\n      Guo, Jin  and\n      Bui, Nghi\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.316/\",\n    doi = \"10.18653/v1/2023.findings-emnlp.316\",\n    pages = \"4763--4788\",\n    abstract = \"We present The Vault, an open-source dataset of high quality code-text pairs in multiple programming languages for training large language models to understand and generate code. We propose methods for thoroughly extracting samples that use both rules and deep learning to ensure that they contain high-quality pairs of code and text, resulting in a dataset of 43 million high-quality code-text pairs. We thoroughly evaluated this dataset and discovered that when used to train common code language models (such as CodeT5, CodeBERT, and CodeGen), it outperforms the same models train on other datasets such as CodeSearchNet. These evaluations included common coding tasks such as code generation, code summarization, and code search. The Vault can be used by researchers and practitioners to train a wide range of big language models that understand code. Alternatively, researchers can use our data cleaning methods and scripts to improve their own datasets. We anticipate that using The Vault to train large language models will improve their ability to understand and generate code, propelling AI research and software development forward. We are releasing our source code and a framework to make it easier for others to replicate our results.\"\n}\n",
     "num": "04"
@@ -34,7 +38,8 @@
   {
     "key": "https://doi.org/10.48550/arxiv.2203.07742",
     "title": "ViWOZ: A Multi-Domain Task-Oriented Dialogue Systems Dataset For Low-resource Language",
-    "meta": "Van et al. (2022). arXiv.",
+    "venueLine": "arXiv.",
+    "authorsLine": "Van, Phi Nguyen and Hoang, Tung Cao and Manh, Dung Nguyen and Minh, Quan Nguyen and Quoc, Long Tran (2022).",
     "url": "https://arxiv.org/abs/2203.07742",
     "bibtex": "@misc{https://doi.org/10.48550/arxiv.2203.07742,\n    doi = {10.48550/ARXIV.2203.07742},\n    url = {https://arxiv.org/abs/2203.07742},\n    author = {Van, Phi Nguyen and Hoang, Tung Cao and Manh, Dung Nguyen and Minh, Quan Nguyen and Quoc, Long Tran},\n    keywords = {Computation and Language (cs.CL), Artificial Intelligence (cs.AI), FOS: Computer and information sciences, FOS: Computer and information sciences},\n    title = {ViWOZ: A Multi-Domain Task-Oriented Dialogue Systems Dataset For Low-resource Language},\n    publisher = {arXiv},\n    year = {2022},\n    copyright = {Creative Commons Attribution Non Commercial Share Alike 4.0 International}\n}\n",
     "num": "05"
