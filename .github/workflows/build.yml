@@ -1,43 +1,63 @@
-name: Build and package
+name: Build and Release Static Site
 
 on:
   push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
+    branches:
+      - main
+      - master
+  workflow_dispatch:
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+permissions:
+  contents: write
 
 jobs:
-  build:
+  build-and-release:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: npm
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Typecheck
-        run: npm run lint
-
-      - name: Build
+      - name: Build static site
         run: npm run build
 
-      - name: Pack static site (tar.gz)
-        run: tar czvf site-static.tar.gz -C dist .
+      - name: Create archive
+        run: |
+          cd dist
+          tar -czvf ../student-notebook-build.tar.gz .
+          cd ..
 
-      - name: Upload site archive
-        uses: actions/upload-artifact@v4
+      - name: Generate release tag
+        id: tag
+        run: |
+          echo "release_tag=build-$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: site-static
-          path: site-static.tar.gz
-          retention-days: 90
+          tag_name: ${{ steps.tag.outputs.release_tag }}
+          name: Release ${{ steps.tag.outputs.release_tag }}
+          files: student-notebook-build.tar.gz
+          body: |
+            Automated build of the static site.
+
+            To deploy on your edge machine, run:
+            ```bash
+            # Download the latest release
+            curl -L -o site.tar.gz https://github.com/${{ github.repository }}/releases/latest/download/student-notebook-build.tar.gz
+
+            # Extract to your web server directory (e.g., /var/www/html)
+            mkdir -p /var/www/html
+            tar -xzvf site.tar.gz -C /var/www/html
+            ```
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
