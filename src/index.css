@@ -64,6 +64,17 @@
   }
 }
 
+@keyframes console-drop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-0.85rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @layer utilities {
   .pixel-border {
     border: 2px solid #1a1a1a;
@@ -74,5 +85,17 @@
     border: 1px solid #1a1a1a;
     border-radius: 0;
     box-shadow: 2px 2px 0 0 #333333;
+  }
+
+  .animate-console-drop {
+    animation: console-drop-in 0.45s cubic-bezier(0.22, 0.95, 0.36, 1.12) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-console-drop {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

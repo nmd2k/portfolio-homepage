@@ -50,6 +50,13 @@ function resolveSocialHref(href: string, assetBase: string): string {
 const NEWS_BLOG_PREVIEW = 3;
 const PROJECTS_PREVIEW = 4;
 
+/** Stagger for `animate-console-drop` on main panels (ms per step). */
+const CONSOLE_DROP_STAGGER_MS = 48;
+
+function consoleDropDelay(step: number): React.CSSProperties {
+  return {animationDelay: `${step * CONSOLE_DROP_STAGGER_MS}ms`};
+}
+
 export default function App() {
   const cfg = siteConfig;
   const data = siteData;
@@ -107,7 +114,10 @@ export default function App() {
       <main className="flex-grow py-12 px-6 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           <section className="md:col-span-4 flex flex-col gap-6">
-            <div className="pixel-border bg-surface-container-high p-6 flex flex-col items-center text-center">
+            <div
+              className="animate-console-drop pixel-border bg-surface-container-high p-6 flex flex-col items-center text-center"
+              style={consoleDropDelay(0)}
+            >
               <div className="group w-48 h-48 mb-6 pixel-border-sm overflow-hidden bg-surface-dim">
                 <img
                   alt={cfg.branding.profile_image_alt ?? 'Profile'}
@@ -136,7 +146,10 @@ export default function App() {
               </div>
             </div>
 
-            <div className="pixel-border bg-surface-container-low p-6">
+            <div
+              className="animate-console-drop pixel-border bg-surface-container-low p-6"
+              style={consoleDropDelay(1)}
+            >
               <div className="flex items-center gap-2 mb-4">
                 <span className="w-3 h-3 bg-tertiary"></span>
                 <h2 className="font-headline font-bold text-lg uppercase tracking-widest">
@@ -152,7 +165,10 @@ export default function App() {
               </div>
             </div>
 
-            <div className="pixel-border bg-surface-container-low p-6">
+            <div
+              className="animate-console-drop pixel-border bg-surface-container-low p-6"
+              style={consoleDropDelay(2)}
+            >
               <div className="flex items-center gap-2 mb-4">
                 <span className="w-3 h-3 bg-tertiary"></span>
                 <h2 className="font-headline font-bold text-lg uppercase tracking-widest">
@@ -168,7 +184,10 @@ export default function App() {
               </div>
             </div>
 
-            <div className="pixel-border bg-surface-container-low p-6">
+            <div
+              className="animate-console-drop pixel-border bg-surface-container-low p-6"
+              style={consoleDropDelay(3)}
+            >
               <div className="flex items-center gap-2 mb-4">
                 <span className="w-3 h-3 bg-tertiary"></span>
                 <h2 className="font-headline font-bold text-lg uppercase tracking-widest">
@@ -186,7 +205,10 @@ export default function App() {
           </section>
 
           <section className="md:col-span-8 flex flex-col gap-6">
-            <div className="pixel-border bg-surface-container-lowest p-6">
+            <div
+              className="animate-console-drop pixel-border bg-surface-container-lowest p-6"
+              style={consoleDropDelay(4)}
+            >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 bg-primary"></span>
@@ -208,7 +230,10 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="pixel-border bg-surface-container-low p-6">
+              <div
+                className="animate-console-drop pixel-border bg-surface-container-low p-6"
+                style={consoleDropDelay(5)}
+              >
                 <div className="flex items-center gap-2 mb-6">
                   <span className="w-3 h-3 bg-tertiary"></span>
                   <h2 className="font-headline font-bold text-lg uppercase tracking-widest">{data.news.section_title}</h2>
@@ -248,7 +273,10 @@ export default function App() {
                 ) : null}
               </div>
 
-              <div className="pixel-border bg-surface-container-highest p-6">
+              <div
+                className="animate-console-drop pixel-border bg-surface-container-highest p-6"
+                style={consoleDropDelay(6)}
+              >
                 <div className="flex items-center gap-2 mb-6">
                   <span className="w-3 h-3 bg-primary"></span>
                   <h2 className="font-headline font-bold text-lg uppercase tracking-widest">{data.blog.section_title}</h2>
@@ -301,7 +329,10 @@ export default function App() {
               </div>
             </div>
 
-            <div className="pixel-border bg-surface-container-high p-6">
+            <div
+              className="animate-console-drop pixel-border bg-surface-container-high p-6"
+              style={consoleDropDelay(7)}
+            >
               <div className="flex items-center gap-2 mb-6">
                 <span className="w-3 h-3 bg-primary"></span>
                 <h2 className="font-headline font-bold text-lg uppercase tracking-widest">
@@ -329,7 +360,10 @@ export default function App() {
               </div>
             </div>
 
-            <div className="pixel-border bg-surface-container-lowest p-6">
+            <div
+              className="animate-console-drop pixel-border bg-surface-container-lowest p-6"
+              style={consoleDropDelay(8)}
+            >
               <div className="flex items-center gap-2 mb-6">
                 <span className="w-3 h-3 bg-primary"></span>
                 <h2 className="font-headline font-bold text-lg uppercase tracking-widest">{data.projects.section_title}</h2>
@@ -384,7 +418,10 @@ export default function App() {
         </div>
       </main>
 
-      <footer className="w-full flex justify-center items-center px-6 py-4 mt-auto bg-surface-container border-t-2 border-outline">
+      <footer
+        className="animate-console-drop w-full flex justify-center items-center px-6 py-4 mt-auto bg-surface-container border-t-2 border-outline"
+        style={consoleDropDelay(9)}
+      >
         <p className="font-headline text-xs text-secondary tracking-wide text-center">
           ® Copyrighted by {cfg.footer.copyright_name} {cfg.footer.year}
         </p>
