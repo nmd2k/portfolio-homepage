@@ -50,8 +50,8 @@ function resolveSocialHref(href: string, assetBase: string): string {
 const NEWS_BLOG_PREVIEW = 3;
 const PROJECTS_PREVIEW = 4;
 
-/** Stagger for `animate-console-drop` on main panels (ms per step). */
-const CONSOLE_DROP_STAGGER_MS = 48;
+/** Stagger for `animate-console-drop` — higher = each block reads as its own drop. */
+const CONSOLE_DROP_STAGGER_MS = 100;
 
 function consoleDropDelay(step: number): React.CSSProperties {
   return {animationDelay: `${step * CONSOLE_DROP_STAGGER_MS}ms`};
@@ -78,6 +78,10 @@ export default function App() {
   const newsHasMore = newsItems.length > NEWS_BLOG_PREVIEW;
   const blogHasMore = blogItems.length > NEWS_BLOG_PREVIEW;
   const projectsHasMore = projectItems.length > PROJECTS_PREVIEW;
+
+  const pubCount = publicationEntries.length;
+  const projectsHeaderDropStep = 8 + Math.max(pubCount, 1);
+  const footerDropStep = projectsHeaderDropStep + 1 + projectsBase.length;
 
   const profileSrc = assetUrl(cfg.branding.profile_image, assetBase);
   const logoSrc = cfg.branding.logo_url?.trim()
@@ -329,11 +333,11 @@ export default function App() {
               </div>
             </div>
 
-            <div
-              className="animate-console-drop pixel-border bg-surface-container-high p-6"
-              style={consoleDropDelay(7)}
-            >
-              <div className="flex items-center gap-2 mb-6">
+            <div className="pixel-border bg-surface-container-high p-6">
+              <div
+                className="animate-console-drop flex items-center gap-2 mb-6"
+                style={consoleDropDelay(7)}
+              >
                 <span className="w-3 h-3 bg-primary"></span>
                 <h2 className="font-headline font-bold text-lg uppercase tracking-widest">
                   {data.publications.section_title}
@@ -341,9 +345,14 @@ export default function App() {
               </div>
               <div className="space-y-2">
                 {publicationEntries.length === 0 ? (
-                  <p className="text-sm text-secondary font-label">No entries in _bib/papers.bib yet.</p>
+                  <p
+                    className="animate-console-drop text-sm text-secondary font-label"
+                    style={consoleDropDelay(8)}
+                  >
+                    No entries in _bib/papers.bib yet.
+                  </p>
                 ) : (
-                  publicationEntries.map((pub) => (
+                  publicationEntries.map((pub, i) => (
                     <React.Fragment key={pub.key}>
                       <PublicationRow
                         num={pub.num}
@@ -353,6 +362,7 @@ export default function App() {
                         url={pub.url}
                         bibtex={pub.bibtex}
                         highlightNames={publicationHighlights}
+                        dropStep={8 + i}
                       />
                     </React.Fragment>
                   ))
@@ -360,16 +370,16 @@ export default function App() {
               </div>
             </div>
 
-            <div
-              className="animate-console-drop pixel-border bg-surface-container-lowest p-6"
-              style={consoleDropDelay(8)}
-            >
-              <div className="flex items-center gap-2 mb-6">
+            <div className="pixel-border bg-surface-container-lowest p-6">
+              <div
+                className="animate-console-drop flex items-center gap-2 mb-6"
+                style={consoleDropDelay(projectsHeaderDropStep)}
+              >
                 <span className="w-3 h-3 bg-primary"></span>
                 <h2 className="font-headline font-bold text-lg uppercase tracking-widest">{data.projects.section_title}</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {projectsBase.map((p) => (
+                {projectsBase.map((p, i) => (
                   <React.Fragment key={p.title}>
                     <ProjectCard
                       title={p.title}
@@ -377,6 +387,7 @@ export default function App() {
                       status={p.status}
                       isExperimental={p.experimental}
                       url={p.url}
+                      dropStep={projectsHeaderDropStep + 1 + i}
                     />
                   </React.Fragment>
                 ))}
@@ -420,7 +431,7 @@ export default function App() {
 
       <footer
         className="animate-console-drop w-full flex justify-center items-center px-6 py-4 mt-auto bg-surface-container border-t-2 border-outline"
-        style={consoleDropDelay(9)}
+        style={consoleDropDelay(footerDropStep)}
       >
         <p className="font-headline text-xs text-secondary tracking-wide text-center">
           ® Copyrighted by {cfg.footer.copyright_name} {cfg.footer.year}
@@ -518,6 +529,7 @@ function PublicationRow({
   url,
   bibtex,
   highlightNames,
+  dropStep,
 }: {
   num: string;
   title: string;
@@ -526,6 +538,7 @@ function PublicationRow({
   url: string | null;
   bibtex: string;
   highlightNames: string[];
+  dropStep?: number;
 }) {
   const [copied, setCopied] = useState(false);
 
@@ -540,7 +553,10 @@ function PublicationRow({
   }
 
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch bg-surface-container-low p-3 border-l-4 border-outline hover:bg-surface-container-highest transition-colors">
+    <div
+      className={`flex flex-col gap-3 sm:flex-row sm:items-stretch bg-surface-container-low p-3 border-l-4 border-outline hover:bg-surface-container-highest transition-colors${dropStep !== undefined ? ' animate-console-drop' : ''}`}
+      style={dropStep !== undefined ? consoleDropDelay(dropStep) : undefined}
+    >
       <div className="flex gap-3 flex-1 min-w-0">
         <span className="font-headline font-bold text-xl text-outline-variant shrink-0 w-8 sm:w-9 text-left">{num}</span>
         <div className="min-w-0 flex-1 flex flex-col gap-1">
@@ -595,16 +611,21 @@ function ProjectCard({
   status,
   isExperimental,
   url,
+  dropStep,
 }: {
   title: string;
   desc: string;
   status: string;
   isExperimental?: boolean;
   url?: string;
+  dropStep?: number;
 }) {
   const link = url ?? '#';
   return (
-    <div className="pixel-border-sm p-4 bg-surface-container flex flex-col justify-between">
+    <div
+      className={`pixel-border-sm p-4 bg-surface-container flex flex-col justify-between${dropStep !== undefined ? ' animate-console-drop' : ''}`}
+      style={dropStep !== undefined ? consoleDropDelay(dropStep) : undefined}
+    >
       <div>
         <h3 className="font-headline font-bold text-sm mb-2 text-primary">{title}</h3>
         <p className="text-xs text-on-surface-variant leading-tight mb-4">{desc}</p>
