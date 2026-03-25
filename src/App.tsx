@@ -333,11 +333,11 @@ export default function App() {
               </div>
             </div>
 
-            <div className="pixel-border bg-surface-container-high p-6">
-              <div
-                className="animate-console-drop flex items-center gap-2 mb-6"
-                style={consoleDropDelay(7)}
-              >
+            <div
+              className="animate-console-drop pixel-border bg-surface-container-high p-6"
+              style={consoleDropDelay(7)}
+            >
+              <div className="flex items-center gap-2 mb-6">
                 <span className="w-3 h-3 bg-primary"></span>
                 <h2 className="font-headline font-bold text-lg uppercase tracking-widest">
                   {data.publications.section_title}
@@ -345,12 +345,7 @@ export default function App() {
               </div>
               <div className="space-y-2">
                 {publicationEntries.length === 0 ? (
-                  <p
-                    className="animate-console-drop text-sm text-secondary font-label"
-                    style={consoleDropDelay(8)}
-                  >
-                    No entries in _bib/papers.bib yet.
-                  </p>
+                  <p className="text-sm text-secondary font-label">No entries in _bib/papers.bib yet.</p>
                 ) : (
                   publicationEntries.map((pub, i) => (
                     <React.Fragment key={pub.key}>
@@ -370,11 +365,11 @@ export default function App() {
               </div>
             </div>
 
-            <div className="pixel-border bg-surface-container-lowest p-6">
-              <div
-                className="animate-console-drop flex items-center gap-2 mb-6"
-                style={consoleDropDelay(projectsHeaderDropStep)}
-              >
+            <div
+              className="animate-console-drop pixel-border bg-surface-container-lowest p-6"
+              style={consoleDropDelay(projectsHeaderDropStep)}
+            >
+              <div className="flex items-center gap-2 mb-6">
                 <span className="w-3 h-3 bg-primary"></span>
                 <h2 className="font-headline font-bold text-lg uppercase tracking-widest">{data.projects.section_title}</h2>
               </div>
