@@ -1,0 +1,5 @@
+{
+  "name": "Academic Console V1.0",
+  "description": "YAML-driven brutalist researcher portfolio; build with Vite and deploy static assets to edge hosting.",
+  "requestFramePermissions": []
+}

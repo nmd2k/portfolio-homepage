@@ -1,0 +1,52 @@
+# Site identity — change infrequently.
+#
+# Binary files: put `logo`, `profile` image, CV PDFs under public/asset/ (served as /asset/...).
+# In this file you can use filenames only, e.g. logo.png → /asset/logo.png
+
+site:
+  title: "Manh Dung portfolio"
+  description: "NMD2k's portfolio and archive dashboard."
+  language: "en"
+
+# Optional: override URL prefix for public/asset (default /asset)
+# assets:
+#   base_path: "/asset"
+
+branding:
+  logo_url: "logo.png"
+  profile_image: "profile_pic.jpg"
+  profile_image_alt: "Me at FPT Vietnam, 2022"
+
+identity:
+  name: "Mạnh Dũng Nguyễn"
+  subtitle: "PhD Candidate @ the University of Melbourne"
+  # Optional label next to the bio heading:
+  # bio_log_id: "4492-VANCE"
+
+footer:
+  copyright_name: "Mạnh Dũng Nguyễn"
+  year: 2026
+
+# Highlight these exact substrings in publication title + meta (from _bib/papers.bib).
+publication_highlight_names:
+  - "Manh Dung Nguyen"
+  - "Dung Manh Nguyen"
+  - "Nguyen, Dung Manh"
+  - "Dung Nguyen Manh"
+  - "Manh, Dung Nguyen"
+
+social:
+  - icon: mail
+    href: "mailto:manhdung.nguyen.1@student.unimelb.edu.au"
+  - icon: github
+    href: "https://github.com/NMD2k"
+  - icon: linkedin
+    href: "https://www.linkedin.com/in/nmd2k/"
+  - icon: substack
+    href: "https://nmd2k.substack.com/"
+  - icon: orcid
+    href: "https://orcid.org/0009-0008-4591-3344"
+  - icon: cv
+    href: "pdfs/cv_2025.pdf"
+  # - icon: graduation-cap
+  #   href: "https://scholar.google.com/citations?hl=en&user=BHpeA4MAAAAJ"

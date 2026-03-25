@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Space Grotesk", sans-serif;
+
+  --color-surface-dim: #d1cdbc;
+  --color-on-tertiary-fixed-variant: #4a3b3b;
+  --color-error: #b91c1c;
+  --color-on-secondary-fixed: #2c2c2c;
+  --color-on-primary: #f5f2e8;
+  --color-on-background: #2c2c2c;
+  --color-on-secondary-container: #4a4a4a;
+  --color-on-surface-variant: #5a5a5a;
+  --color-on-error: #ffffff;
+  --color-on-primary-fixed: #1a1a1a;
+  --color-background: #f5f2e8;
+  --color-primary-fixed-dim: #5c5c5c;
+  --color-inverse-on-surface: #f5f2e8;
+  --color-surface-bright: #faf8f2;
+  --color-tertiary: #5d4037;
+  --color-surface-tint: #2c2c2c;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-highest: #d8d4c7;
+  --color-on-error-container: #7f1d1d;
+  --color-outline-variant: #a8a294;
+  --color-on-tertiary-fixed: #2d2424;
+  --color-surface-variant: #e8e4d9;
+  --color-tertiary-fixed: #d7ccc8;
+  --color-secondary: #5a5a5a;
+  --color-primary-container: #e8e4d9;
+  --color-inverse-surface: #2c2c2c;
+  --color-tertiary-fixed-dim: #bcaaa4;
+  --color-inverse-primary: #ffffff;
+  --color-outline: #2c2c2c;
+  --color-primary-fixed: #d8d4c7;
+  --color-surface-container-low: #edeae0;
+  --color-on-secondary-fixed-variant: #444444;
+  --color-surface-container: #e5e1d5;
+  --color-on-surface: #2c2c2c;
+  --color-on-primary-container: #1a1a1a;
+  --color-secondary-fixed-dim: #b0b0b0;
+  --color-primary: #1a1a1a;
+  --color-on-secondary: #ffffff;
+  --color-surface-container-high: #dfdbce;
+  --color-on-tertiary-container: #3e2723;
+  --color-secondary-container: #d8d4c7;
+  --color-surface: #f5f2e8;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #efebe9;
+  --color-secondary-fixed: #e0e0e0;
+  --color-on-primary-fixed-variant: #333333;
+  --color-error-container: #fee2e2;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+  body {
+    background-image: radial-gradient(#d8d4c7 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    @apply bg-background font-body text-on-background min-h-screen flex flex-col;
+  }
+}
+
+@layer utilities {
+  .pixel-border {
+    border: 2px solid #1a1a1a;
+    border-radius: 0;
+    box-shadow: 4px 4px 0 0 #333333;
+  }
+  .pixel-border-sm {
+    border: 1px solid #1a1a1a;
+    border-radius: 0;
+    box-shadow: 2px 2px 0 0 #333333;
+  }
+}

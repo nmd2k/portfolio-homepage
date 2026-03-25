@@ -1,0 +1,100 @@
+# Content templates — education, news, projects, etc.
+# Publications are generated from _bib/papers.bib at build time (see scripts/generate-publications.mjs).
+
+bio:
+  section_title: "BIO_LOG"
+  # Easier authoring format for BIO:
+  # - **bold text**
+  # - [link text](https://example.com)
+  # - plain line breaks
+  markdown:
+    - "I am currently pursuing my PhD at the University of Melbourne (ranked 19* worldwide), under the supervision of [Dr. Bach Le Dinh Xuan](https://xuanbachle.github.io/) and [Dr. Van-Thuan Pham](https://thuanpv.github.io/). Previously, I graduated with a Bachelor's degree in Computer Science from Vietnam National University in 2022, where I was supervised by [Dr. Tran Quoc Long](https://scholar.google.com/citations?user=tnDavuYAAAAJ&hl=en), Director of the Institute for Artificial Intelligence."
+    - "From 2022 to 2025, I joined the **AI Residency Program** at the FPT AI Center, working alongside outstanding young researchers across Vietnam. With invaluable mentorship from [Dr. Nghi Bui](https://bdqnghi.github.io/) (Salesforce Senior Scientist; Product Owner & Lab Manager at FPT Software) and [Dr. Quang Pham](https://sites.google.com/view/quangpham93) (Research Scientist at A*STAR), I published research papers at leading international conferences, including ICLR, EMNLP, and NAACL."
+    # - "Beyond academia, I am an active contributor to open-source projects and always welcome opportunities for collaboration. The best way to reach me is via email."
+
+education:
+  section_title: "EDUCATION & AWARDS"
+  items:
+    - date: "2025 — Present"
+      title: "PhD in Engineering and Information Technology"
+      org: "School of Computing and Information Systems (CIS), University of Melbourne"
+    - date: "2018 - 2022"
+      title: "Honours BSc in Computer Science"
+      org: "University of Engineering and Technology (UET), Vietnam National University"
+
+experiment:
+  section_title: "EXPERIMENTS // LABs"
+  items:
+    - date: "2021 - 2025"
+      title: "AI Residency"
+      org: "FPT Software AI Center"
+      url: "#"
+    - date: "2022"
+      title: "Viettel Talent AI Internship"
+      org: "Viettel Digital"
+      url: "#"
+    - date: "2020 - 2022"
+      title: "Student Researcher"
+      org: "AI Labs, UET"
+      url: "#"
+    
+
+news:
+  section_title: "NEWS"
+  items:
+    - date: "MAR_26"
+      text: "I have started new projects about LLMs tutorial at my SubStack 📖"
+    - date: "OCT_25"
+      text: "I have been awarded the Melbourne Research Scholarship 🎉"
+    - date: "MAR_25"
+      text: "CodeMMLU has been published at ICLR 2025, and released full code and data 🚀"
+    - date: "APR_25"
+      text: "Our work on Repo evaluation has been published at NAACL 2025! 🧪"
+    - date: "DEC_23"
+      text: "My first paper 'TheVault' has been accepted at EMNLP 2023! 🏆"
+
+
+blog:
+  section_title: "BLOG_FRAGMENTS"
+  items:
+    - title: "THE FIRST SUBSTACK BLOG"
+      excerpt: "I have started a new tutorial series on AI and LLM, sharing insights from my research and experiments in the field..."
+      id: "01"
+      href: "https://nmd2k.substack.com/p/testing-123"
+    # - title: "LATENCY AS A FEATURE"
+    #   excerpt: "Reframing the delay in human cognition as a verification layer for AI safety..."
+    #   id: "02"
+    #   href: "#"
+
+publications:
+  section_title: "CORE_PUBLICATIONS"
+
+projects:
+  section_title: "ACTIVE_PROJECTS"
+  items:
+    - title: "LASER-trans"
+      desc: "A framework to convert source code into a Code Property Graph (CPG), then translate it into Z3 Static Single Assignment (SSA) constraints, and solves for path feasibility."
+      status: "EXPERIMENTAL"
+      experimental: true
+      url: "https://github.com/MelbourneDebuggingGroup/LASER"
+    - title: "CDG-Extractor"
+      desc: "A tool for creating a Code Property Graph (CPG) using Joern to extract code dependencies for multilingual repositories (C, C++, Python, Java, JS, etc)."
+      status: "ACTIVE"
+      experimental: true
+      url: "https://github.com/MelbourneDebuggingGroup/CDG-Extractor"
+    - title: "CodeText Parser"
+      desc: "Code-Text parser is a custom tree-sitter's grammar parser for extract raw source code into class and function level."
+      status: "DEACTIVE"
+      experimental: false
+      url: "https://github.com/FSoft-AI4Code/CodeText-parser"
+    - title: "CodeText Parser"
+      desc: "Code-Text parser is a custom tree-sitter's grammar parser for extract raw source code into class and function level."
+      status: "DEACTIVE"
+      experimental: false
+      url: "https://github.com/FSoft-AI4Code/CodeText-parser"
+    - title: "CodeText Parser"
+      desc: "Code-Text parser is a custom tree-sitter's grammar parser for extract raw source code into class and function level."
+      status: "DEACTIVE"
+      experimental: false
+      url: "https://github.com/FSoft-AI4Code/CodeText-parser"
+
